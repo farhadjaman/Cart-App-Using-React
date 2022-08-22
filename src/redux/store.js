@@ -1,9 +1,15 @@
-import { createStore, applyMiddleware } from "redux";
+// import { createStore, applyMiddleware } from "redux";
+import { createStore } from "redux";
 import rootReducer from "./rootReducers";
+
+
 //our own custom logger
-import myLogger from "./middlewares/myLogger";
+// import myLogger from "./middlewares/myLogger";
+
+
 //third party redux logger
-import logger from "redux-logger"
-const store = createStore(rootReducer, applyMiddleware(logger, myLogger))//we can add multiple middleware in applymiddleware
+//import logger from "redux-logger"
+// import { composeWithDevTools } from "redux-devtools-extension";
+const store = createStore(rootReducer)//we can add multiple middleware in applymiddleware
 
 export default store;
