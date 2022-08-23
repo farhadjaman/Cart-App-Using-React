@@ -3,6 +3,7 @@ import CartDashboard from './CartDashboard'
 import { useDispatch, useSelector } from 'react-redux/es/exports'
 import { setProducts } from '../redux/Products/actions'
 import Product from '../components/Product'
+import products from '../data/data'
 
 
 
@@ -12,8 +13,9 @@ const Home = () => {
 
 
   useEffect(() => {
-    dispatch(setProducts());
-  }, [productItems, dispatch])
+    dispatch(setProducts(products));
+  }, [dispatch])
+
   console.log(productItems)
 
   return (
@@ -33,7 +35,7 @@ const Home = () => {
           >
             {productItems.map(product => (
 
-              <div key={product._id} >
+              <div key={product.id} >
                 <Product product={product} />
               </div>
             ))}

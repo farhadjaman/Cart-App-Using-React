@@ -1,11 +1,9 @@
 import { combineReducers } from "redux";
-import counterReducer from "./counter/counterReducer";
-import dynamicCounterReducer from "./dynamicCounter/dynamicCounterReducer";
 import productReducer from "./Products/productReducer.js";
+import cartReducer from "./Cart/cartReducer.js"
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
-  dynamicCounter: dynamicCounterReducer,
-  product: productReducer
+  product: productReducer,
+  cart: cartReducer
 })
 export default rootReducer;

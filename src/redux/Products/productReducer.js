@@ -12,28 +12,11 @@ const productReducer = (state = initialState, { type, payload }) => {
     case SETPRODUCTS:
       {
 
-        fetch('data.json'
-          , {
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            }
-          }
-        )
-          .then((response) => {
-            return response.json()
-          })
-          .then((data) => {
 
-            state.productItems = data.products
-
-
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-
-        return state;
+        return {
+          ...state,
+          productItems: [...payload]
+        };
       }
     case SETISLOADING:
       return {

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { increment, decrement } from "../redux/counter/actions";
-import { dincrement, ddecrement } from "../redux/dynamicCounter/actions";
+import { increment, decrement } from "./counter/actions";
+import { dincrement, ddecrement } from "./dynamicCounter/actions";
 const VariableCounter = ({ count, increment, decrement }) => {
 
 

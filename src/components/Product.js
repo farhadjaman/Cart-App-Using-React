@@ -1,6 +1,12 @@
 import React from 'react'
-
+import { useDispatch } from 'react-redux'
+import { addProductToCart } from './../redux/Cart/actions'
 const Product = ({ product }) => {
+  const dispatch = useDispatch();
+
+  const addProductHandler = (product) => {
+    dispatch(addProductToCart(product))
+  }
   return (
 
     <div
@@ -14,6 +20,7 @@ const Product = ({ product }) => {
         <div className="text-lg font-semibold">
           <button
             className="focus:outline-none bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-2 rounded-full inline-flex items-center"
+            onClick={() => addProductHandler(product)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
